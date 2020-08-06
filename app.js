@@ -25,12 +25,19 @@ app.use(
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
+const bookRouter = require('./src/routes/bookRoutes');
+
+app.use('/books', bookRouter);
+
 app.get('/', (req, res) => {
   // res.send('Hello master Nnadozie');
   // res.sendFile(path.join(__dirname, '/views/index.html'));
   res.render('index', {
-    titleList: ['a library', 'b library'],
-    title: 'A library title',
+    nav: [
+      { link: '/books', title: 'Books' },
+      { link: '/authors', title: 'Authors' },
+    ],
+    title: 'Library',
   });
 });
 
