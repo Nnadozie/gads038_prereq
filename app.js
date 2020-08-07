@@ -30,8 +30,10 @@ const nav = [
   { link: '/authors', title: 'Authors' },
 ];
 const bookRouter = require('./src/routes/bookRoutes')(nav);
+const adminRouter = require('./src/routes/adminRoutes')(nav);
 
 app.use('/books', bookRouter);
+app.use('/admin', adminRouter);
 
 app.get('/', (req, res) => {
   // res.send('Hello master Nnadozie');
