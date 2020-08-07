@@ -37,7 +37,7 @@ const books = [
   },
 ];
 
-module.exports = function router(nav) {
+module.exports = function router() {
   adminRouter.route('/').get((req, res) => {
     const url = 'mongodb://localhost:27017';
     const dbName = 'prereqDb';
